@@ -20,11 +20,17 @@ subdir-y	:= $(dts-dirs)
 clean-files	:= *.dtb  *.dtbo
 
 ifeq ($(CONFIG_BUILD_ARM64_DTBO_IMG),y)
-	dtbo-$(CONFIG_ARCH_MEDIATEK) += \
-		oppo8786.dtbo
+dtbo-$(CONFIG_ARCH_MEDIATEK) += \
+	oppo8786.dtbo \
+	oppo8786_wlan.dtbo \
+	oppo8786_21697.dtbo
 oppo8786.dtbo-base := oppo8786.dtb mt6768.dtb
+oppo8786_wlan.dtbo-base := oppo8786_wlan.dtb mt6768.dtb
+oppo8786_21697.dtbo-base := oppo8786_21697.dtb mt6768.dtb
 else
 dtb-$(CONFIG_ARCH_MEDIATEK)	+= \
 	mt6768.dtb \
-	oppo8786.dtb
+	oppo8786.dtb \
+	oppo8786_wlan.dtb \
+	oppo8786_21697.dtb
 endif
